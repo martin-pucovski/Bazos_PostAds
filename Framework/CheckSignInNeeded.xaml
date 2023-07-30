@@ -1,0 +1,139 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="CheckSignInNeeded" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_blnSignInNeeded" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1234,981</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>CheckSignInNeeded_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Check if Sign In is needed." DisplayName="CheckSignInNeeded" sap:VirtualizedContainerService.HintSize="1112,916" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="1050,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[out_blnSignInNeeded]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+      </Assign.Value>
+    </Assign>
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Chrome: Moje inzeráty | Bazos.sk" sap:VirtualizedContainerService.HintSize="1050,652" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="32751f90-0fcb-4665-bba1-1ceeb1949b61" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,435" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'Súhlasím s podmienkami'" Exists="[out_blnSignInNeeded]" sap:VirtualizedContainerService.HintSize="954,322" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="32751f90-0fcb-4665-bba1-1ceeb1949b61" Timeout="3" Version="V1">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://auto.bazos.sk/pridat-inzerat.php" DesignTimeRectangle="450, 390, 1244, 119" ElementType="Container" FriendlyName="'Súhlasím s'" FullSelectorArgument="&lt;webctrl name='formovereni' tag='FORM' /&gt;" FuzzySelectorArgument="&lt;webctrl name='formovereni' tag='FORM' type='' class='' aaname=' .  Telefónne číslo      ' check:innerText='Súhlasím s podmienkami serveru Bazos.sk.&amp;#xD;&amp;#xA;&amp;#xD;&amp;#xA;Telefónne číslo *' /&gt;" Guid="0fc4241a-3b6e-41f5-b72e-3d0aa40771b4" ImageBase64="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" InformativeScreenshot="01bed4c15afdb17475fa14c05ff4f232.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Auto.Bazos.sk - Pridať inzerát | Bazoš.sk' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" WaitForReadyArgument="Complete" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1056" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPvSURBVGhD7ZjdUeQwEIQ3BEIgBEIgBELg6Z4JgRAIgRAIgRAIgRDIgPvaJRlp1JJlL3Uv567qWntm9DOj0Ujey4kTJ06c+Of4/nO5g8/wDX7Ab8Mv+A5f4ENqejXoS+Ou4yTxNjC+hZrMZ268k3LoFd6mLneDtgpc1W9S9YHRDdTAVcMrqUDcpCGmQRutaNnPW1J5YPAAFbmykaM6jtxaKaXeXRpqE9g+Fm0z+6mJ0jXIVO5LP0wH9Fo9BaG3ggrOlBPYxYB8JlULlL3JH85htYNyPPYpJ4bphN7N5zmpa6BQxKKxvL9PJleBftxkhrmMXikZ27SBlBDGnFeu2gghl/19wdl0cE7YACFvKg/8SOoaKKKndvLINFkXFVGrtWyuIM9cJspvVc/hu+QRyFWxSjvxJal/gFCTioZNRJHNllQ3sLgGhOe4MZu0MDZiu1oIY0SbTWJs9rKqHLzHVHpKqgW8u/RpDy+E0bCpDLz3IiqnNBGtYM8ms9qsvKvMjvRPQS+2qYYwDlxFn3eXXmIVMQGZ26CZblXLu1S1OXl36fqa1D9AOMxFoxfbjZSArpdqTe4iq2yTeEHUJdZBQBCXMUbBRXR4+KCLFWZhUldAPnKgap9YXx8QxPSoIsu7Oz270RfQOwds7Ua+14F6FRHEjfKYVAuCLnN4YKF3DrS5C5CX6RmrVNk+s3EgDrYa6DnoFiZ1F9i4auQ2vE7y0matMDz3CscuB+bKWAA27ivNHYpx7NVJng87sA5kdOLQAfQxqguTegUyFY9474rVr9Rl7lqBIw5MrRqymGbOptRnNg7EAQ87gE5R3TwzeHdX9npiwNi0dhIEg/WgMLrM3vW6d5VYKxvP7jPVfg8g/5WDLA4m6myI+Tq6pWrS2hvORivWC4izt1fpWDXWyfE8uqBpANGlzQwVnO6Zgm76MhcN10OH515eX0v1uXUguuv0V1L/AKErfWU5VUczTsyuhuy6d6kS2Ln+mg8fGcZ8qz4n9QxVldyekG3+jNTGdzaSaYwq6rzH7+qqyvAe5yVW150FCN0qaLM2kUKmFckDttEAhX5ko36is9WdiXeXRvZeJWNX96uV+C3Qp5u83htnkcU0avdBBsren0/NZewI6CenYhxDtH8VInfVyP+tiEIDuANElCMqq8Pq4UAbpZLyOUY9s83rBHSaU2zn0ygDg1H9F9WhHJWdIpo/7EVFTDLpesHIVD8+mgWwcas2Tm0MNJmZsniUcs5u8Ajs3CrMpTWGiu5WJPdQ+6y5vG2BNnEv9P+hdqCBSq060QT2rIwipzZqOxXxHmhfXXuS+DjoJOd9j79agumvOviS+MSJ/xSXy19PFegWjir3CQAAAABJRU5ErkJggg==" InformativeScreenshot="6f1870a8ecb1342e4da5a9bf81c38ea0.png" Selector="&lt;html app='chrome.exe' title='*| Bazo?.sk' /&gt;" Url="https://www.bazos.sk/*" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
