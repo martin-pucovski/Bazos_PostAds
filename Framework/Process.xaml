@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1234,7030</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1234,8078</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -92,13 +92,14 @@
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1112,6965" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1210,8013" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strBazosPassword" />
+      <Variable x:TypeArguments="x:Boolean" Name="blnSignInNeeded" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -106,14 +107,14 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="1050,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started adding &quot; + in_drTransactionData(&quot;Nadpis&quot;).ToString]" />
-    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Chrome: Podať inzerát - Inzercia zadarmo | Bazos.sk" sap:VirtualizedContainerService.HintSize="1050,6518" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="1148,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started adding &quot; + in_drTransactionData(&quot;Nadpis&quot;).ToString]" />
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Chrome: Podať inzerát - Inzercia zadarmo | Bazos.sk" sap:VirtualizedContainerService.HintSize="1148,7566" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,6301" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1114,7349" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dtAllImages" />
               <Variable x:TypeArguments="ss:SecureString" Name="sstrBazosPassword" />
@@ -126,7 +127,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activate Chrome Window" sap:VirtualizedContainerService.HintSize="954,87" sap2010:WorkflowViewState.IdRef="Activate_1">
+            <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activate Chrome Window" sap:VirtualizedContainerService.HintSize="1052,87" sap2010:WorkflowViewState.IdRef="Activate_1">
               <ui:Activate.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="ee3b9465-e75b-4baf-be75-cb0030dec751">
                   <ui:Target.TimeoutMS>
@@ -138,8 +139,8 @@
                 </ui:Target>
               </ui:Activate.Target>
             </ui:Activate>
-            <ui:GetRobotCredential TimeoutMS="{x:Null}" Username="{x:Null}" AssetName="Bazos" DisplayName="Get Credential Bazos" sap:VirtualizedContainerService.HintSize="954,181" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[sstrBazosPassword]" />
-            <Assign sap2010:Annotation.AnnotationText="Needed to be able to use it in selector." DisplayName="Assign Nadpis" sap:VirtualizedContainerService.HintSize="954,113" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" Username="{x:Null}" AssetName="Bazos" DisplayName="Get Credential Bazos" sap:VirtualizedContainerService.HintSize="1052,181" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[sstrBazosPassword]" />
+            <Assign sap2010:Annotation.AnnotationText="Needed to be able to use it in selector." DisplayName="Assign Nadpis" sap:VirtualizedContainerService.HintSize="1052,113" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strNadpis]</OutArgument>
               </Assign.To>
@@ -152,40 +153,68 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State One Ad" sap:VirtualizedContainerService.HintSize="954,1161" sap2010:WorkflowViewState.IdRef="NCheckState_1" OutUiElement="[uielAd]" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State One Ad" sap:VirtualizedContainerService.HintSize="1052,1685" sap2010:WorkflowViewState.IdRef="NCheckState_1" OutUiElement="[uielAd]" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,944" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="548,1468" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ClickType="Single" DisplayName="Click One Ad" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
+                  <uix:NClick ClickType="Single" DisplayName="Click One Ad" sap:VirtualizedContainerService.HintSize="486,157" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.bazos.sk/moje-inzeraty.php" DesignTimeRectangle="840, 471, 0, 15" ElementType="Text" FriendlyName="'Nová mechanická'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' tag='A' /&gt;&quot;, strNadpis)]" FuzzySelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' tag='A' type='' class='' check:innerText='{0}' /&gt;&quot;, strNadpis)]" Guid="827d1d78-7415-43b0-9f32-3b8fd7ba69ac" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARUAAAATCAYAAAC+wJlLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATrSURBVHhe7VjXceUwDFQh7kkt+U+lqBSV8srQMSEQANOz7EvYGcxZIomwAFf2bbfD4XA8CBcVh8PxKFxUHA7Ho3BRcTgcj+K3isrr3O9t2+7tuMqb3w/MaT/vV3n3OF7nvccY236foyALe+f4vO4j+dtue1tvHdYm8v4h/Ei/voqVfv8DIFG5jtycaGyaoGn702wUov8gPUn4a0Vlms/3ReU6vpmXN/AzokKcbNsRnhbxZVF53ecO8WvLPbLWZayZPbxOa33GR0tU2MbvEpXXdX3jELyPP+7LNzmQ83y+KyrXHUL8n6juRou3Dh4UFTt2XGdiZ8TDuQYHUBPMuTyDz+R36KNAi8q+Z2floCkqGBCMAqevmdhfvVNno3XUnxd7suam/DpfEDEISiTkeiGTi8pZ8o5GzZRqHo0PC7uUJ6uVx5cNTNB+a75gL+17i0+eX9rEvj6CU6gZ+scN+2sNlnqnv3DEZ4DqBfgfc2l/BEZccutxlaHqr5Jn60RY2Vt8yx4u5zESFQm53zgvclKCEVDf5bEPgBaVcAKcxcNKVNBRgzA1UNDgBmlqvwBvQKqGD0z2WRdPOQNBzWcW8zoEucFyODEgEpIPnl/yT83QHMohY80JceuLENcMXxIjPll+sT51IcS6hhwu2E+58/nR6+JZ8cdBubS4VL3scSkx5CqC5XvZuSoO5cxYOXEM8zAudBfEW90Dfr7ug7wjEXVdYx8AU1SQhFDkVYKpJhrB8x4goATifgFIMrMWoaohmuA6J6MBVZP7DZoaUkYwmRYV8K+GTvi0OEWwvUcQvrRPcrXCJ8/vEMOfYA0Pq4EZlZPzyv2H88WnujDEf9qPvaEZI4y5lP3qchmxxJX0b8+O6m81bwHWDC3lQXFr4zNJwJw7M6neyZzTq7ye65rwUWCLSgAOSvhzKP1bslcEBrQaHR/5zwktwluEqoboxiKJ6QUVqi3GtIkAoC/IR8ZX+YC/dgMVZ8KHxSkC9zLj+1b5ZPmhVXtl/kIE4o6SL6YBMeML/nNaKnwapmaKWT4+5lL2q8vlMle6djUfASpmKw7MzBfysMqqgL4p5/BS8UjvYI5ZbcKynzkfEU1R4U7IMQvMqgNSsQgcrLOQAReO9uL5EaGyIQbBdU6jBvTX1dCI+HqogCeoUZPfrFn6tBMqe6O/Bd/NASUf+3khF80BVPxTTEoXOD3us9SCazBXzXxq1FyM65X96HH5/uxZpvlAvwNRWe/ZpKiYghJhnDf6WgPOwPq8j46oxDOlQcGUYKhLRMLBE2j6LO/kUCioxHVxcz5DnnLw2Lr6PxVYk/HlJZEDhHy0L4LyaTUn+E2cizWZ31ztHCK/Yf7wDLnp+iIwbjI+C+39/BlQc6XPSi5VvR0uV7my12n+4E5Iv4rTVg8n8+AxIYQCxpSCktHMsRFTzWzArI+uqPBiqkSRJDA+RBmYQLCaiFpw9vB3ffLVIlQNyVhUEhjJaDyGWrcvrY7PCI8W8s+D/wVRSaBzYJaohBfEX/K3yGcvv3TGEIGKq1Bv2Y/rEXwmqoWIOkewuI3PCRoFHnKp+pXQ4HKJK9orL6mOqeNls0VlLY8I2q+ojeDcS0OfVg/4/Ol1HWvkI4NExeFwOB5AEpXPz0+hPm5ubm7z9vHxkQQlwn9TcTgcj8JFxeFwPAoXFYfD8SDu+xf55HSCXUzmcgAAAABJRU5ErkJggg==" InformativeScreenshot="8ce0fb322f18b27ea23883708478a2d9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Moje inzeráty | Bazos.sk' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NClick ClickType="Single" DisplayName="Click 'Zmazať/ Upraviť/ Topovať'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Zmazať/ Upraviť/ Topovať'" sap:VirtualizedContainerService.HintSize="486,157" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://pc.bazos.sk/inzerat/152739487/nova-mechanicka-klavesnica-aula-f2090.php" DesignTimeRectangle="1539, 262, 155, 15" ElementType="Text" FriendlyName="'Zmazať/ Upraviť/ Topovať'" FullSelectorArgument="&lt;webctrl aaname='Zmazať/ Upraviť/ Topovať' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Zmazať/ Upraviť/ Topovať' tag='A' type='' class='' check:innerText='Zmazať/ Upraviť/ Topovať' /&gt;" Guid="b89beeb2-b3f4-4809-9dbf-cddcf4a2dceb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJ8AAAATCAYAAACOad9DAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANPSURBVGhD7VfBUSsxDN2+OFJAqqCCnHPOLTdqYDhQAxdmqOFXQBn+lmx5pWd5sywZnGV8eMPYWkt6es/OMIV/72FgoAeG+Qa6YZhvoBt2ar7ncJ6mcH71YnvFX+Rk8XV5CNPjKXzl9T7N9/pkSDA+TuGAe/cI6nN6CC8fsL9nTqvwFl4e7eUq5mNXxptX4yl85m964/OYmqde8YWgvcPlzezpWCVsr5cGzLeJE+fwtEr4dU5LKBcozhs0WHz5aDAtQXtAhKpjdKuc1yTjrswH2MqpoPWS3gsWXu+m+SrBMsnzUb2Qx+f0c6HXJUcSt8RULs6tY4R8FmNFGF2HgL01CBLWmI9MMB1P/NOQaihBReCL9JB+DfiM9AOvmZ1F+snhi6zN8gNOBTqf2ZO8OpY5X1Qcapj5q9gip6bW6ZuyH6Evmm8+Hgr83GZC5SUUgtIQDiHmmAul5to/IXIuNhsNIITTIOY+Wq8Efbf0Qq82n+rfnEGucl6t+bz5Xs1Pr2FOWzkVQD7klbSUeDYJmKPUAd1Xc1rSmr6rZp/gmI8OazIZ10hWawsmYsQjQKMIqOkL1ehXYbX5dH+6dsXdgREuiSq5uX7jkm7lVIC9gYG8F0rX07NZnMESJ4DJQznWmQ9ugkYlABKpiXETca8Amq3IEriOPndFKBp2g5ygbT6b2/ai4hX3DBZa9zqLPotjRcNcWzkVYG/OWarRMp/+fv5O4nZGTU75rJmFzJL6a3Ax5qsFUKgEQCJ2zblUUcztGoJrqJwrhKK95ssp8MR0chvuOl5xj2DjqT1eOz9L9FfXdupu4iTA3rCPm718sq458Tlcf8t8nkAa2Mga8xUiaQCmIZMrA/dBYBrU0s1sI/Wmzy4ODNdevyAyi2hETzkO8T9W0zPk2s4po6FLyWlmaDWq1jBvnJHsISc7O9Caa9i5CLL58oHYSI18sEGySYS/lxyxWdUQN1tiGV6MSDo1UywOhYZVSF6B6SefV/GqJx2vuBPszEgQNB+KyWjMsdT8DieC1xvM3q2VYY0vlyjHYUaMJifJabUm6JyzX9x/OPYDMowm8xPY29sPt+RUAx+Mvtix+WiQ/nO+BfdhvttyqjHMNzDAGOYb6IZhvoFOeA//ATL/naR9ApbYAAAAAElFTkSuQmCC" InformativeScreenshot="41c127e17bd3e7be096d22471703794e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nová mechanická klávesnica Aula F2090 - Bratislava | Bazoš.sk' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Vymazanie alebo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,242" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" SecureText="[sstrBazosPassword]" Version="V1">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckSignInNeeded workflow" sap:VirtualizedContainerService.HintSize="486,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\CheckSignInNeeded.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_blnSignInNeeded">
+                        <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="blnSignInNeeded" />
+                      </OutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <If Condition="[blnSignInNeeded]" DisplayName="If Sign In needed" sap:VirtualizedContainerService.HintSize="486,327" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="450,138" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw Exception="[new BusinessRuleException(&quot;Sign in needed.&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Vymazanie alebo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="486,242" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" SecureText="[sstrBazosPassword]" Version="V1">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://pc.bazos.sk/zmazat/152739487.php" DesignTimeRectangle="450, 577, 177, 23" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl name='heslobazar' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl name='heslobazar' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="a2b2014d-c9b4-4632-be46-bcec2e910033" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALUAAAAbCAYAAAA6Rc43AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADVSURBVHhe7duxDcIwEIVh1vIcEUgZBJsNQNSEGZwpMgeNVzk4ipAoZIB7+j/pVW5/ubuDvSZjTGlEzeS2inocrtYfO0spMRZi3qt3u+x4jtofSj5ba82AKLzXkrPVxy/sOWovnqARkXfbn7pt1P6VA1F9+yVqKCFqyCFqyCFqyCFqyCFqyCFqyCFqyCFqyCFqyCFqyCFqyCFqyCFqyCFqyCFqyPkbNZcviGr38mUcbnYphbARivfq3dbnfRu1r37C5pqcRZr36t0uO15FzZjCiJqJbbI3oH5Bjz3OIW4AAAAASUVORK5CYII=" InformativeScreenshot="0f1fc4918cdf858eef9ca2374b4d293d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Bazos.sk - Vymazanie/Úprava inzerátu č. 152739487 | Bazoš.sk' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target DesignTimeRectangle="450, 513, 225, 15" FriendlyName="'Vymazanie alebo'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;b' idx='5' isleaf='1' tag='B' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' isleaf='1' tag='B' aaname='Vymazanie alebo úprava inzerátu' check:innerText='Vymazanie alebo úprava inzerátu' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOUAAAATCAYAAABvAsoSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP6SURBVHhe7ZixcSMxDEXVl0MXoCpcgWLFypS5Bo8D1eDEM6rhKnAZe+SSAAF8YLm25bvVmMGbuTVJ8OMD2LVvN/15mwaDwXYYQzkYbIwxlIPBxhhDORhsjF8+lM/TabebdonTq7f+XT4f/3oo+3eHZ3f9e1yml8cSf3++OOsb5/047Wc/H6aXd2f9n9P8vGX/lKEMk/2ZS7fD7xrKj/ODU+M7YmNDWfx8mq527fWp1PDxOH3YtRXUL2XwBmUTnIsHK9jYUL7f4ddxs1ym62vg522GkqZeN4P+mddg+kvK+5OYF2ou2k9CM+IObkJBezG0OzXlJbF8VjZ40lN16rfsck5EPFCevl584RPh+RFqXj6PoAY7+K1uD/UlrPerL9S51jGf5Z9L6AXu/ZYV9ItkKRf7pfR0qRhYy4LwU/ZlRgyS189d3TZeZo7ZrwPR/qaEryKaymIoiDkjxc5nYBBJmG6yhldIXPP/HsKzbWjLfdLkYrw1yurr6TWAh3EhKIfome80b11bA8zJEmuAGKTb5sHPAtNIMx2tHCfQar0AWEf1RupS/eX1z0LevWfBUlzWbXwo+/p1IMR/9NimpiDUYAlrar2cxHAStM6mUQx/6FicwCYPBa4snYWk+SURDA2Y2XsRZFqMRhCfn9uQW89As2pEzz+MqbEa8A6omz1jh4FjyzUBxCl+0D3SS75b8PmhJF0L9VqoLXtp+gN9aSzqhrsy/ToQYijFRXkTBVYHKJFiQgnaCgVJsGnRUKKJJJSNcuOsOwtJG9OtUZ7RhNso0BS6CePmdqieYaEoRr4DC+sVW4Pr9g5sPlMnyLNi/aR9ohnLXX6/RDpcrzNWB+jCnihID+3PPEo+6Euhq/uWQ8kHU7DyO7RMolIv3J+PZa8ICEmwadSk/WKT0NZgmMzMirOQdGcofTNjsGgUL4jPz46vFdCs8jT+zWd6Ma0GvCPOo55xvPbi8D7pn+2X6I70M2hui9UBuryhjAbV81KDvmRW6L7tUIqNEJRoweUFGUiCTQuGkmORqbFwLNT6s6uH0omRyXnJZ8aa340fFCL7VJ/tOnsaPPOdMp4Cmy+8w+YBddRDGWpTfdM8yHjDUnRFwyP4wlCCX4JQb33211fohj7wzgW9kIChbAFjcziYEusk0R3KhLgv7zvV2PM6n7fUeEtn0zokDWZ5Q9g0Stq6hu/IHJKG+d9L8YVPkqpRxSMinwmn4RTKJzzn6uEcEsFQWq/2Kf95n9HbcjLnVX3Ti+9QdNxuKPULoSF0eN5U/f5QJlboVnWk8506EDiUXWzi3p7BPRE23+C/8PmhhK/N4N4ZQ7ktvvClHAwGP8kYysFgY4yhHAw2xdv0Fz8DGlG4NxtZAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
                       </uix:TargetAnchorable>
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <uix:NClick ClickType="Single" DisplayName="Click 'Zmazať'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Zmazať'" sap:VirtualizedContainerService.HintSize="486,157" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://pc.bazos.sk/zmazat/152739487.php" DesignTimeRectangle="513, 620, 62, 23" ElementType="Button" FriendlyName="'Zmazať'" FullSelectorArgument="&lt;webctrl aaname='Zmazať' name='administrace' parentid='formedit' tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Zmazať' name='administrace' parentid='formedit' tag='INPUT' type='submit' class='' check:text='Zmazať' /&gt;" Guid="560b6caa-5e19-43a1-909a-9786b6b6bc08" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEIAAAAbCAYAAADI1VnXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGoSURBVFhH7ZhBboMwEEW5FgfwvlUWOURh6Ss0ayu5QpsufAckVr5CF5xlyoSxscnglgRBBV58CWKPPf95xpHI4LuCpAoSCFIA4uvyDsfDC+R5vmmhR/Tqe3cgcKAs3qCua2iaZtNCj+j1eu5hOBBIaQ8QrNDr8fB6DwJLhgvYstBzAtEqgSA9CMKAEhlkGSOpmfnryigBmVBgmDGrGStCg2xBSM2NrSHMR4Ay+NwenIof0EwgqEL+VTV4ILQiIOOaBQRXeloimDYB10ISNFVN/z6Y78bsSdLa7neStxcfF7buX6r0eRBaegn06hIcJmbNd0CEMt18XGNojq2uQftF4/zW+F1PghgY8jQ0E753YLi48TaLxfTjq4AYP7mJIIwCQWWMVSQYEOxe0bilQNxaIuxzX1NAxOeO//3F45YAQScRu4TiSTIgrFF7ynZuBHg0bgkQ7E3u1CU9BURQ4q0x7SqA+j5YH0VgRuO8Pdux8Xul12MVsUElEKQEgpRAkFgQ6QsVPVwvJyiKYhcw0GNZlvBxPt2DQH2e9/MVG7363gMQe1YCcVMFPxCtirwNkg3hAAAAAElFTkSuQmCC" InformativeScreenshot="d5cdf9959101c50f77add6993ee682bf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Bazos.sk - Vymazanie/Úprava inzerátu č. 152739487 | Bazoš.sk' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
-                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                             <uix:Target DesignTimeRectangle="450, 513, 225, 15" FriendlyName="'Vymazanie alebo'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;b' idx='5' isleaf='1' tag='B' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' isleaf='1' tag='B' aaname='Vymazanie alebo úprava inzerátu' check:innerText='Vymazanie alebo úprava inzerátu' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOUAAAATCAYAAABvAsoSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP6SURBVHhe7ZixcSMxDEXVl0MXoCpcgWLFypS5Bo8D1eDEM6rhKnAZe+SSAAF8YLm25bvVmMGbuTVJ8OMD2LVvN/15mwaDwXYYQzkYbIwxlIPBxhhDORhsjF8+lM/TabebdonTq7f+XT4f/3oo+3eHZ3f9e1yml8cSf3++OOsb5/047Wc/H6aXd2f9n9P8vGX/lKEMk/2ZS7fD7xrKj/ODU+M7YmNDWfx8mq527fWp1PDxOH3YtRXUL2XwBmUTnIsHK9jYUL7f4ddxs1ym62vg522GkqZeN4P+mddg+kvK+5OYF2ou2k9CM+IObkJBezG0OzXlJbF8VjZ40lN16rfsck5EPFCevl584RPh+RFqXj6PoAY7+K1uD/UlrPerL9S51jGf5Z9L6AXu/ZYV9ItkKRf7pfR0qRhYy4LwU/ZlRgyS189d3TZeZo7ZrwPR/qaEryKaymIoiDkjxc5nYBBJmG6yhldIXPP/HsKzbWjLfdLkYrw1yurr6TWAh3EhKIfome80b11bA8zJEmuAGKTb5sHPAtNIMx2tHCfQar0AWEf1RupS/eX1z0LevWfBUlzWbXwo+/p1IMR/9NimpiDUYAlrar2cxHAStM6mUQx/6FicwCYPBa4snYWk+SURDA2Y2XsRZFqMRhCfn9uQW89As2pEzz+MqbEa8A6omz1jh4FjyzUBxCl+0D3SS75b8PmhJF0L9VqoLXtp+gN9aSzqhrsy/ToQYijFRXkTBVYHKJFiQgnaCgVJsGnRUKKJJJSNcuOsOwtJG9OtUZ7RhNso0BS6CePmdqieYaEoRr4DC+sVW4Pr9g5sPlMnyLNi/aR9ohnLXX6/RDpcrzNWB+jCnihID+3PPEo+6Euhq/uWQ8kHU7DyO7RMolIv3J+PZa8ICEmwadSk/WKT0NZgmMzMirOQdGcofTNjsGgUL4jPz46vFdCs8jT+zWd6Ma0GvCPOo55xvPbi8D7pn+2X6I70M2hui9UBuryhjAbV81KDvmRW6L7tUIqNEJRoweUFGUiCTQuGkmORqbFwLNT6s6uH0omRyXnJZ8aa340fFCL7VJ/tOnsaPPOdMp4Cmy+8w+YBddRDGWpTfdM8yHjDUnRFwyP4wlCCX4JQb33211fohj7wzgW9kIChbAFjcziYEusk0R3KhLgv7zvV2PM6n7fUeEtn0zokDWZ5Q9g0Stq6hu/IHJKG+d9L8YVPkqpRxSMinwmn4RTKJzzn6uEcEsFQWq/2Kf95n9HbcjLnVX3Ti+9QdNxuKPULoSF0eN5U/f5QJlboVnWk8506EDiUXWzi3p7BPRE23+C/8PmhhK/N4N4ZQ7ktvvClHAwGP8kYysFgY4yhHAw2xdv0Fz8DGlG4NxtZAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
                           </scg:List>
                         </uix:TargetAnchorable.Anchors>
@@ -207,10 +236,10 @@
                 <uix:TargetAnchorable BrowserURL="https://www.bazos.sk/moje-inzeraty.php" DesignTimeRectangle="460, 127, 199, 15" ElementType="Text" FriendlyName="'Nová mechanická'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' tag='A' /&gt;&quot;, strNadpis)]" FuzzySelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' tag='A' type='' class='' check:innerText='{0}' /&gt;&quot;, strNadpis)]" Guid="30396f08-4e3d-4a42-87e2-6f0f60340863" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARUAAAATCAYAAAC+wJlLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATrSURBVHhe7VjXceUwDFQh7kkt+U+lqBSV8srQMSEQANOz7EvYGcxZIomwAFf2bbfD4XA8CBcVh8PxKFxUHA7Ho3BRcTgcj+K3isrr3O9t2+7tuMqb3w/MaT/vV3n3OF7nvccY236foyALe+f4vO4j+dtue1tvHdYm8v4h/Ei/voqVfv8DIFG5jtycaGyaoGn702wUov8gPUn4a0Vlms/3ReU6vpmXN/AzokKcbNsRnhbxZVF53ecO8WvLPbLWZayZPbxOa33GR0tU2MbvEpXXdX3jELyPP+7LNzmQ83y+KyrXHUL8n6juRou3Dh4UFTt2XGdiZ8TDuQYHUBPMuTyDz+R36KNAi8q+Z2floCkqGBCMAqevmdhfvVNno3XUnxd7suam/DpfEDEISiTkeiGTi8pZ8o5GzZRqHo0PC7uUJ6uVx5cNTNB+a75gL+17i0+eX9rEvj6CU6gZ+scN+2sNlnqnv3DEZ4DqBfgfc2l/BEZccutxlaHqr5Jn60RY2Vt8yx4u5zESFQm53zgvclKCEVDf5bEPgBaVcAKcxcNKVNBRgzA1UNDgBmlqvwBvQKqGD0z2WRdPOQNBzWcW8zoEucFyODEgEpIPnl/yT83QHMohY80JceuLENcMXxIjPll+sT51IcS6hhwu2E+58/nR6+JZ8cdBubS4VL3scSkx5CqC5XvZuSoO5cxYOXEM8zAudBfEW90Dfr7ug7wjEXVdYx8AU1SQhFDkVYKpJhrB8x4goATifgFIMrMWoaohmuA6J6MBVZP7DZoaUkYwmRYV8K+GTvi0OEWwvUcQvrRPcrXCJ8/vEMOfYA0Pq4EZlZPzyv2H88WnujDEf9qPvaEZI4y5lP3qchmxxJX0b8+O6m81bwHWDC3lQXFr4zNJwJw7M6neyZzTq7ye65rwUWCLSgAOSvhzKP1bslcEBrQaHR/5zwktwluEqoboxiKJ6QUVqi3GtIkAoC/IR8ZX+YC/dgMVZ8KHxSkC9zLj+1b5ZPmhVXtl/kIE4o6SL6YBMeML/nNaKnwapmaKWT4+5lL2q8vlMle6djUfASpmKw7MzBfysMqqgL4p5/BS8UjvYI5ZbcKynzkfEU1R4U7IMQvMqgNSsQgcrLOQAReO9uL5EaGyIQbBdU6jBvTX1dCI+HqogCeoUZPfrFn6tBMqe6O/Bd/NASUf+3khF80BVPxTTEoXOD3us9SCazBXzXxq1FyM65X96HH5/uxZpvlAvwNRWe/ZpKiYghJhnDf6WgPOwPq8j46oxDOlQcGUYKhLRMLBE2j6LO/kUCioxHVxcz5DnnLw2Lr6PxVYk/HlJZEDhHy0L4LyaTUn+E2cizWZ31ztHCK/Yf7wDLnp+iIwbjI+C+39/BlQc6XPSi5VvR0uV7my12n+4E5Iv4rTVg8n8+AxIYQCxpSCktHMsRFTzWzArI+uqPBiqkSRJDA+RBmYQLCaiFpw9vB3ffLVIlQNyVhUEhjJaDyGWrcvrY7PCI8W8s+D/wVRSaBzYJaohBfEX/K3yGcvv3TGEIGKq1Bv2Y/rEXwmqoWIOkewuI3PCRoFHnKp+pXQ4HKJK9orL6mOqeNls0VlLY8I2q+ojeDcS0OfVg/4/Ol1HWvkI4NExeFwOB5AEpXPz0+hPm5ubm7z9vHxkQQlwn9TcTgcj8JFxeFwPAoXFYfD8SDu+xf55HSCXUzmcgAAAABJRU5ErkJggg==" InformativeScreenshot="4621935f010708a213c6bfb1b61f1627.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Moje inzeráty | Bazos.sk' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
               </uix:NCheckState.Target>
             </uix:NCheckState>
-            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="954,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://www.bazos.sk/pridat-inzerat.php" Version="V1" />
-            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Podať inzerát'" sap:VirtualizedContainerService.HintSize="954,467" sap2010:WorkflowViewState.IdRef="NCheckState_4" OutUiElement="[uielElektro]" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
+            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="1052,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://www.bazos.sk/pridat-inzerat.php" Version="V1" />
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State 'Podať inzerát'" sap:VirtualizedContainerService.HintSize="1052,469" sap2010:WorkflowViewState.IdRef="NCheckState_4" OutUiElement="[uielElektro]" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,250" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,252" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -231,14 +260,40 @@
               <uix:NCheckState.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.bazos.sk/pridat-inzerat.php" DesignTimeRectangle="1362, 374, 48, 15" FriendlyName="'Elektro'" FullSelectorArgument="&lt;webctrl aaname='Elektro' idx='2' tag='B' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Elektro' type='' tag='B' class='' check:innerText='Elektro' /&gt;" Guid="2cd28104-4bc0-4b0a-920f-3a8d662b8fd0" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAATCAYAAADf0S5lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEnSURBVFhH7ZSxDYQwDEWzFyUDMAUTpKZOR8cMiIIZaJCY4SZgDJ9C4jg4CYe4OwkBxS8SO+Y/m0TAa4Ar6QE6u24MNFZQCAFCZNCOkXigBtSSL0B1sfh/5AGRAa7F0M+BemjzrfgxRYAShu8BRKZQZI4DeblSBecwb64zs84raCXt65ouhpKN/RbpCyCen1obQ5M1RybiEwpM27jbt+d98Nme1dpxh0qYdJwDdaWJu4JksKj7VT0lbS7WYvlRoJXRWC5voNHhCcU6ieJATh9NpoC85gRA6/PHf7lgQlz0waJu2PR0/GQTSnVIGzJrFscGuN+OTBJkCsjbxzuI9djDsOMOWUMBkBaZCvIjwO5hQLOuJuWlgLRcDLX9yl1DD9DZ9QCdWwO8ATT3+xe1xDjJAAAAAElFTkSuQmCC" InformativeScreenshot="d2d780577890ffbd4e7d370498ea69d6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Podať inzerát - Inzercia zadarmo | Bazos.sk' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="695, 259, 90, 15" FriendlyName="'Podať inzerát'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;b' isleaf='1' tag='B' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' tag='B' class='' aaname='Podať inzerát' check:innerText='Podať inzerát' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAATCAYAAAAZFLrcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHUSURBVFhH7ZW9scMgDIDZK2UGyBSewHXqdO48gy9FZkiTO8+QCTIGD2wkQBL+ey/G747iK2wZJH2IROn3Uxf2p4jPRBGfiWOLf131RSmtzlf9keL/mO+Kv1daWXGq0r0Un8Otv93JezgQddLdi8Sy0Orbynq8eJREqFu2aDGrxT90dx7zWtmf5iRP+8HE97WpRaoT+hdiXDx+5CVcmke0aDG/FC9/czRa3adq3SbeTRx5N5zuIHOEHgqNj4B4uJIhMLVeOo8R6MSHzw0ctgFvq5TXEgwEDokj4aFz/dnBkHpFH3Q/S7DnMvGuAUgEm2NiF2cHhckTE4/CIL5w4pPiDUMtXjTfh99k2mfyOWBqX4wJToFFPzXjRsIfSCRuInEkXpq+vxIPtXG5AJU6KczVxQYqQJr6beIJuAlrjr4TpoyKZ3vAmp3E43dzgwBMiec54BC2iRc+Gpmb+HnxvIE9xQv1DcznFMWznF8Tz3/joSB64niNiXiWg8ZTk0rZIJ7WHiJPtDko95yMRznnBw/yWVaJt6BcR9yIbzjGJ47W1xWZeANKtPhpilgrPtozJMiLkgImxdM1phfXW3hzon6D9V58YVeK+EwU8Zko4jNRxGfhqX8AVXO6qsOqIiUAAAAASUVORK5CYII=" SearchSteps="FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NCheckState.Target>
             </uix:NCheckState>
-            <uix:NSelectItem DisplayName="Select Item Rubrika" sap:VirtualizedContainerService.HintSize="954,157" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="[in_drTransactionData(&quot;Rubrika&quot;).ToString]" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckSignInNeeded workflow" sap:VirtualizedContainerService.HintSize="1052,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\CheckSignInNeeded.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_blnSignInNeeded">[blnSignInNeeded]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <If Condition="[blnSignInNeeded]" DisplayName="If Sign In needed" sap:VirtualizedContainerService.HintSize="1052,329" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="450,140" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[new BusinessRuleException(&quot;Sign in needed.&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <uix:NSelectItem DisplayName="Select Item Rubrika" sap:VirtualizedContainerService.HintSize="1052,157" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="[in_drTransactionData(&quot;Rubrika&quot;).ToString]" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
               <uix:NSelectItem.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="20">
                   <x:String>Auto</x:String>
@@ -267,7 +322,7 @@
                 <uix:TargetAnchorable BrowserURL="https://elektro.bazos.sk/pridat-inzerat.php" DesignTimeRectangle="450, 332, 122, 25" ElementType="DropDown" FriendlyName="'Elektro'" FullSelectorArgument="&lt;webctrl name='rubrikyvybrat' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl name='rubrikyvybrat' tag='SELECT' type='' class='' aaname='' /&gt;" Guid="2c81cf0a-e86b-4754-aa32-ad60bcb69036" InformativeScreenshot="1a0dc994426c17e6edf913b68ec2d195.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Elektro.Bazos.sk - Pridať inzerát | Bazoš.sk' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
               </uix:NSelectItem.Target>
             </uix:NSelectItem>
-            <uix:NSelectItem DisplayName="Select Item Kategoria" sap:VirtualizedContainerService.HintSize="954,157" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[in_drTransactionData(&quot;Kategoria&quot;).ToString]" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
+            <uix:NSelectItem DisplayName="Select Item Kategoria" sap:VirtualizedContainerService.HintSize="1052,157" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[in_drTransactionData(&quot;Kategoria&quot;).ToString]" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
               <uix:NSelectItem.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="33">
                   <x:String>Vyber kategóriu</x:String>
