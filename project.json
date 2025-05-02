@@ -1,5 +1,6 @@
 {
   "name": "Bazos_PostAds",
+  "projectId": "c5420ecb-e8e5-4ba2-9e59-fe9b7efe13a1",
   "description": "Posts ads to bazos",
   "main": "Main.xaml",
   "dependencies": {
@@ -12,7 +13,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "22.4.0.0",
-  "projectVersion": "1.0.1-alpha.8",
+  "projectVersion": "1.0.1-alpha.10",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -86,7 +87,7 @@
         "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
       }
     ],
-    "modernBehavior": true
+    "saveToCloud": false
   },
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
@@ -100,5 +101,5 @@
   "isTemplate": false,
   "templateProjectData": {},
   "publishData": {},
-  "targetFramework": "Legacy"
+  "targetFramework": "Windows"
 }
