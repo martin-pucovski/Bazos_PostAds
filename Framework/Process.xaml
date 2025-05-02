@@ -1,102 +1,120 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_drTransactionData" Type="InArgument(sd:DataRow)" />
     <x:Property Name="in_strProjectData" Type="InArgument(x:String)" />
     <x:Property Name="in_dtUserInfo" Type="InArgument(sd:DataTable)" />
   </x:Members>
-  <mva:VisualBasic.Settings>
+  <VisualBasic.Settings>
     <x:Null />
-  </mva:VisualBasic.Settings>
+  </VisualBasic.Settings>
   <sap:VirtualizedContainerService.HintSize>1234,8078</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="39">
-      <x:String>System.Activities</x:String>
-      <x:String>System.Activities.Statements</x:String>
-      <x:String>System.Activities.Expressions</x:String>
-      <x:String>System.Activities.Validation</x:String>
-      <x:String>System.Activities.XamlIntegration</x:String>
+    <scg:List x:TypeArguments="x:String" Capacity="78">
       <x:String>Microsoft.VisualBasic</x:String>
       <x:String>Microsoft.VisualBasic.Activities</x:String>
       <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
       <x:String>System.Collections</x:String>
       <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
       <x:String>System.Data</x:String>
       <x:String>System.Diagnostics</x:String>
       <x:String>System.Drawing</x:String>
       <x:String>System.IO</x:String>
       <x:String>System.Linq</x:String>
       <x:String>System.Net.Mail</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>System.Windows.Markup</x:String>
       <x:String>System.Xml</x:String>
       <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
-      <x:String>System.Windows.Markup</x:String>
-      <x:String>System.Collections.ObjectModel</x:String>
-      <x:String>System.Activities.DynamicUpdate</x:String>
-      <x:String>System.Runtime.Serialization</x:String>
-      <x:String>System.Runtime.InteropServices</x:String>
-      <x:String>System.Windows.Forms</x:String>
-      <x:String>UiPath.UIAutomationNext.Enums</x:String>
-      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
-      <x:String>UiPath.UIAutomationNext.Activities</x:String>
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
-      <x:String>System.Reflection</x:String>
-      <x:String>System.Security</x:String>
-      <x:String>System.ComponentModel</x:String>
       <x:String>UiPath.Shared.Activities.Business</x:String>
-      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
       <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
       <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
-      <x:String>System.Xml.Serialization</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <scg:List x:TypeArguments="AssemblyReference" Capacity="76">
-      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
-      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
-      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
-      <AssemblyReference>PresentationFramework</AssemblyReference>
-      <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>PresentationCore</AssemblyReference>
-      <AssemblyReference>System.Xaml</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.ServiceModel</AssemblyReference>
-      <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Windows.Forms</AssemblyReference>
-      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
-      <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
-      <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
-      <AssemblyReference>System.Data.Entity</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
-      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1210,8013" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="2809,7424" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strBazosPassword" />
       <Variable x:TypeArguments="x:Boolean" Name="blnSignInNeeded" />
@@ -107,14 +125,14 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="1148,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started adding &quot; + in_drTransactionData(&quot;Nadpis&quot;).ToString]" />
-    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Chrome: Podať inzerát - Inzercia zadarmo | Bazos.sk" sap:VirtualizedContainerService.HintSize="1148,7566" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="1120,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started adding &quot; + in_drTransactionData(&quot;Nadpis&quot;).ToString]" />
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Chrome: Podať inzerát - Inzercia zadarmo | Bazos.sk" sap:VirtualizedContainerService.HintSize="1120,7064" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1114,7349" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1086,6815" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="dtAllImages" />
               <Variable x:TypeArguments="ss:SecureString" Name="sstrBazosPassword" />
@@ -127,7 +145,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activate Chrome Window" sap:VirtualizedContainerService.HintSize="1052,87" sap2010:WorkflowViewState.IdRef="Activate_1">
+            <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Activate Chrome Window" sap:VirtualizedContainerService.HintSize="1052,119" sap2010:WorkflowViewState.IdRef="Activate_1">
               <ui:Activate.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="ee3b9465-e75b-4baf-be75-cb0030dec751">
                   <ui:Target.TimeoutMS>
@@ -139,8 +157,8 @@
                 </ui:Target>
               </ui:Activate.Target>
             </ui:Activate>
-            <ui:GetRobotCredential TimeoutMS="{x:Null}" Username="{x:Null}" AssetName="Bazos" DisplayName="Get Credential Bazos" sap:VirtualizedContainerService.HintSize="1052,181" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[sstrBazosPassword]" />
-            <Assign sap2010:Annotation.AnnotationText="Needed to be able to use it in selector." DisplayName="Assign Nadpis" sap:VirtualizedContainerService.HintSize="1052,113" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" Username="{x:Null}" AssetName="Bazos" DisplayName="Get Credential Bazos" sap:VirtualizedContainerService.HintSize="1052,173" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[sstrBazosPassword]" />
+            <Assign sap2010:Annotation.AnnotationText="Needed to be able to use it in selector." DisplayName="Assign Nadpis" sap:VirtualizedContainerService.HintSize="1052,145" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strNadpis]</OutArgument>
               </Assign.To>
@@ -153,44 +171,52 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State One Ad" sap:VirtualizedContainerService.HintSize="1052,1685" sap2010:WorkflowViewState.IdRef="NCheckState_1" OutUiElement="[uielAd]" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1052,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[String.Format(&quot;Nadpis value: {0}&quot;, strNadpis)]" />
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State One Ad" sap:VirtualizedContainerService.HintSize="1052,1773" sap2010:WorkflowViewState.IdRef="NCheckState_1" OutUiElement="[uielAd]" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="548,1468" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="452,1484" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ClickType="Single" DisplayName="Click One Ad" sap:VirtualizedContainerService.HintSize="486,157" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
+                  <uix:NClick sap2010:Annotation.AnnotationText="Offset needs t be set at Top Left to address the issue when there are multiple lines in Nadpis" ClickType="Single" DisplayName="Click One Ad" sap:VirtualizedContainerService.HintSize="418,231" sap2010:WorkflowViewState.IdRef="NClick_16" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
                     <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://www.bazos.sk/moje-inzeraty.php" DesignTimeRectangle="840, 471, 0, 15" ElementType="Text" FriendlyName="'Nová mechanická'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' tag='A' /&gt;&quot;, strNadpis)]" FuzzySelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' tag='A' type='' class='' check:innerText='{0}' /&gt;&quot;, strNadpis)]" Guid="827d1d78-7415-43b0-9f32-3b8fd7ba69ac" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARUAAAATCAYAAAC+wJlLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATrSURBVHhe7VjXceUwDFQh7kkt+U+lqBSV8srQMSEQANOz7EvYGcxZIomwAFf2bbfD4XA8CBcVh8PxKFxUHA7Ho3BRcTgcj+K3isrr3O9t2+7tuMqb3w/MaT/vV3n3OF7nvccY236foyALe+f4vO4j+dtue1tvHdYm8v4h/Ei/voqVfv8DIFG5jtycaGyaoGn702wUov8gPUn4a0Vlms/3ReU6vpmXN/AzokKcbNsRnhbxZVF53ecO8WvLPbLWZayZPbxOa33GR0tU2MbvEpXXdX3jELyPP+7LNzmQ83y+KyrXHUL8n6juRou3Dh4UFTt2XGdiZ8TDuQYHUBPMuTyDz+R36KNAi8q+Z2floCkqGBCMAqevmdhfvVNno3XUnxd7suam/DpfEDEISiTkeiGTi8pZ8o5GzZRqHo0PC7uUJ6uVx5cNTNB+a75gL+17i0+eX9rEvj6CU6gZ+scN+2sNlnqnv3DEZ4DqBfgfc2l/BEZccutxlaHqr5Jn60RY2Vt8yx4u5zESFQm53zgvclKCEVDf5bEPgBaVcAKcxcNKVNBRgzA1UNDgBmlqvwBvQKqGD0z2WRdPOQNBzWcW8zoEucFyODEgEpIPnl/yT83QHMohY80JceuLENcMXxIjPll+sT51IcS6hhwu2E+58/nR6+JZ8cdBubS4VL3scSkx5CqC5XvZuSoO5cxYOXEM8zAudBfEW90Dfr7ug7wjEXVdYx8AU1SQhFDkVYKpJhrB8x4goATifgFIMrMWoaohmuA6J6MBVZP7DZoaUkYwmRYV8K+GTvi0OEWwvUcQvrRPcrXCJ8/vEMOfYA0Pq4EZlZPzyv2H88WnujDEf9qPvaEZI4y5lP3qchmxxJX0b8+O6m81bwHWDC3lQXFr4zNJwJw7M6neyZzTq7ye65rwUWCLSgAOSvhzKP1bslcEBrQaHR/5zwktwluEqoboxiKJ6QUVqi3GtIkAoC/IR8ZX+YC/dgMVZ8KHxSkC9zLj+1b5ZPmhVXtl/kIE4o6SL6YBMeML/nNaKnwapmaKWT4+5lL2q8vlMle6djUfASpmKw7MzBfysMqqgL4p5/BS8UjvYI5ZbcKynzkfEU1R4U7IMQvMqgNSsQgcrLOQAReO9uL5EaGyIQbBdU6jBvTX1dCI+HqogCeoUZPfrFn6tBMqe6O/Bd/NASUf+3khF80BVPxTTEoXOD3us9SCazBXzXxq1FyM65X96HH5/uxZpvlAvwNRWe/ZpKiYghJhnDf6WgPOwPq8j46oxDOlQcGUYKhLRMLBE2j6LO/kUCioxHVxcz5DnnLw2Lr6PxVYk/HlJZEDhHy0L4LyaTUn+E2cizWZ31ztHCK/Yf7wDLnp+iIwbjI+C+39/BlQc6XPSi5VvR0uV7my12n+4E5Iv4rTVg8n8+AxIYQCxpSCktHMsRFTzWzArI+uqPBiqkSRJDA+RBmYQLCaiFpw9vB3ffLVIlQNyVhUEhjJaDyGWrcvrY7PCI8W8s+D/wVRSaBzYJaohBfEX/K3yGcvv3TGEIGKq1Bv2Y/rEXwmqoWIOkewuI3PCRoFHnKp+pXQ4HKJK9orL6mOqeNls0VlLY8I2q+ojeDcS0OfVg/4/Ol1HWvkI4NExeFwOB5AEpXPz0+hPm5ubm7z9vHxkQQlwn9TcTgcj8JFxeFwPAoXFYfD8SDu+xf55HSCXUzmcgAAAABJRU5ErkJggg==" InformativeScreenshot="8ce0fb322f18b27ea23883708478a2d9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Moje inzeráty | Bazos.sk' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+                      <uix:TargetAnchorable BrowserURL="https://www.bazos.sk/moje-inzeraty.php" DesignTimeRectangle="840, 471, 0, 15" ElementType="Text" FriendlyName="'Nová mechanická'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' tag='A' /&gt;&quot;, strNadpis)]" FuzzySelectorArgument="[String.Format(&quot;&lt;webctrl aaname='{0}' tag='A' type='' class='' check:innerText='{0}' /&gt;&quot;, strNadpis)]" Guid="827d1d78-7415-43b0-9f32-3b8fd7ba69ac" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARUAAAATCAYAAAC+wJlLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATrSURBVHhe7VjXceUwDFQh7kkt+U+lqBSV8srQMSEQANOz7EvYGcxZIomwAFf2bbfD4XA8CBcVh8PxKFxUHA7Ho3BRcTgcj+K3isrr3O9t2+7tuMqb3w/MaT/vV3n3OF7nvccY236foyALe+f4vO4j+dtue1tvHdYm8v4h/Ei/voqVfv8DIFG5jtycaGyaoGn702wUov8gPUn4a0Vlms/3ReU6vpmXN/AzokKcbNsRnhbxZVF53ecO8WvLPbLWZayZPbxOa33GR0tU2MbvEpXXdX3jELyPP+7LNzmQ83y+KyrXHUL8n6juRou3Dh4UFTt2XGdiZ8TDuQYHUBPMuTyDz+R36KNAi8q+Z2floCkqGBCMAqevmdhfvVNno3XUnxd7suam/DpfEDEISiTkeiGTi8pZ8o5GzZRqHo0PC7uUJ6uVx5cNTNB+a75gL+17i0+eX9rEvj6CU6gZ+scN+2sNlnqnv3DEZ4DqBfgfc2l/BEZccutxlaHqr5Jn60RY2Vt8yx4u5zESFQm53zgvclKCEVDf5bEPgBaVcAKcxcNKVNBRgzA1UNDgBmlqvwBvQKqGD0z2WRdPOQNBzWcW8zoEucFyODEgEpIPnl/yT83QHMohY80JceuLENcMXxIjPll+sT51IcS6hhwu2E+58/nR6+JZ8cdBubS4VL3scSkx5CqC5XvZuSoO5cxYOXEM8zAudBfEW90Dfr7ug7wjEXVdYx8AU1SQhFDkVYKpJhrB8x4goATifgFIMrMWoaohmuA6J6MBVZP7DZoaUkYwmRYV8K+GTvi0OEWwvUcQvrRPcrXCJ8/vEMOfYA0Pq4EZlZPzyv2H88WnujDEf9qPvaEZI4y5lP3qchmxxJX0b8+O6m81bwHWDC3lQXFr4zNJwJw7M6neyZzTq7ye65rwUWCLSgAOSvhzKP1bslcEBrQaHR/5zwktwluEqoboxiKJ6QUVqi3GtIkAoC/IR8ZX+YC/dgMVZ8KHxSkC9zLj+1b5ZPmhVXtl/kIE4o6SL6YBMeML/nNaKnwapmaKWT4+5lL2q8vlMle6djUfASpmKw7MzBfysMqqgL4p5/BS8UjvYI5ZbcKynzkfEU1R4U7IMQvMqgNSsQgcrLOQAReO9uL5EaGyIQbBdU6jBvTX1dCI+HqogCeoUZPfrFn6tBMqe6O/Bd/NASUf+3khF80BVPxTTEoXOD3us9SCazBXzXxq1FyM65X96HH5/uxZpvlAvwNRWe/ZpKiYghJhnDf6WgPOwPq8j46oxDOlQcGUYKhLRMLBE2j6LO/kUCioxHVxcz5DnnLw2Lr6PxVYk/HlJZEDhHy0L4LyaTUn+E2cizWZ31ztHCK/Yf7wDLnp+iIwbjI+C+39/BlQc6XPSi5VvR0uV7my12n+4E5Iv4rTVg8n8+AxIYQCxpSCktHMsRFTzWzArI+uqPBiqkSRJDA+RBmYQLCaiFpw9vB3ffLVIlQNyVhUEhjJaDyGWrcvrY7PCI8W8s+D/wVRSaBzYJaohBfEX/K3yGcvv3TGEIGKq1Bv2Y/rEXwmqoWIOkewuI3PCRoFHnKp+pXQ4HKJK9orL6mOqeNls0VlLY8I2q+ojeDcS0OfVg/4/Ol1HWvkI4NExeFwOB5AEpXPz0+hPm5ubm7z9vHxkQQlwn9TcTgcj8JFxeFwPAoXFYfD8SDu+xf55HSCXUzmcgAAAABJRU5ErkJggg==" InformativeScreenshot="8ce0fb322f18b27ea23883708478a2d9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Moje inzeráty | Bazos.sk' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset Position="TopLeft" />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
                     </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
-                  <uix:NClick ClickType="Single" DisplayName="Click 'Zmazať/ Upraviť/ Topovať'" sap:VirtualizedContainerService.HintSize="486,157" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Zmazať/ Upraviť/ Topovať'" sap:VirtualizedContainerService.HintSize="418,189" sap2010:WorkflowViewState.IdRef="NClick_11" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://pc.bazos.sk/inzerat/152739487/nova-mechanicka-klavesnica-aula-f2090.php" DesignTimeRectangle="1539, 262, 155, 15" ElementType="Text" FriendlyName="'Zmazať/ Upraviť/ Topovať'" FullSelectorArgument="&lt;webctrl aaname='Zmazať/ Upraviť/ Topovať' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Zmazať/ Upraviť/ Topovať' tag='A' type='' class='' check:innerText='Zmazať/ Upraviť/ Topovať' /&gt;" Guid="b89beeb2-b3f4-4809-9dbf-cddcf4a2dceb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJ8AAAATCAYAAACOad9DAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANPSURBVGhD7VfBUSsxDN2+OFJAqqCCnHPOLTdqYDhQAxdmqOFXQBn+lmx5pWd5sywZnGV8eMPYWkt6es/OMIV/72FgoAeG+Qa6YZhvoBt2ar7ncJ6mcH71YnvFX+Rk8XV5CNPjKXzl9T7N9/pkSDA+TuGAe/cI6nN6CC8fsL9nTqvwFl4e7eUq5mNXxptX4yl85m964/OYmqde8YWgvcPlzezpWCVsr5cGzLeJE+fwtEr4dU5LKBcozhs0WHz5aDAtQXtAhKpjdKuc1yTjrswH2MqpoPWS3gsWXu+m+SrBMsnzUb2Qx+f0c6HXJUcSt8RULs6tY4R8FmNFGF2HgL01CBLWmI9MMB1P/NOQaihBReCL9JB+DfiM9AOvmZ1F+snhi6zN8gNOBTqf2ZO8OpY5X1Qcapj5q9gip6bW6ZuyH6Evmm8+Hgr83GZC5SUUgtIQDiHmmAul5to/IXIuNhsNIITTIOY+Wq8Efbf0Qq82n+rfnEGucl6t+bz5Xs1Pr2FOWzkVQD7klbSUeDYJmKPUAd1Xc1rSmr6rZp/gmI8OazIZ10hWawsmYsQjQKMIqOkL1ehXYbX5dH+6dsXdgREuiSq5uX7jkm7lVIC9gYG8F0rX07NZnMESJ4DJQznWmQ9ugkYlABKpiXETca8Amq3IEriOPndFKBp2g5ygbT6b2/ai4hX3DBZa9zqLPotjRcNcWzkVYG/OWarRMp/+fv5O4nZGTU75rJmFzJL6a3Ax5qsFUKgEQCJ2zblUUcztGoJrqJwrhKK95ssp8MR0chvuOl5xj2DjqT1eOz9L9FfXdupu4iTA3rCPm718sq458Tlcf8t8nkAa2Mga8xUiaQCmIZMrA/dBYBrU0s1sI/Wmzy4ODNdevyAyi2hETzkO8T9W0zPk2s4po6FLyWlmaDWq1jBvnJHsISc7O9Caa9i5CLL58oHYSI18sEGySYS/lxyxWdUQN1tiGV6MSDo1UywOhYZVSF6B6SefV/GqJx2vuBPszEgQNB+KyWjMsdT8DieC1xvM3q2VYY0vlyjHYUaMJifJabUm6JyzX9x/OPYDMowm8xPY29sPt+RUAx+Mvtix+WiQ/nO+BfdhvttyqjHMNzDAGOYb6IZhvoFOeA//ATL/naR9ApbYAAAAAElFTkSuQmCC" InformativeScreenshot="41c127e17bd3e7be096d22471703794e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Nová mechanická klávesnica Aula F2090 - Bratislava | Bazoš.sk' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckSignInNeeded workflow" sap:VirtualizedContainerService.HintSize="486,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\CheckSignInNeeded.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckSignInNeeded workflow" sap:VirtualizedContainerService.HintSize="418,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\CheckSignInNeeded.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_blnSignInNeeded">
-                        <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="blnSignInNeeded" />
-                      </OutArgument>
+                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_blnSignInNeeded">[blnSignInNeeded]</OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <If Condition="[blnSignInNeeded]" DisplayName="If Sign In needed" sap:VirtualizedContainerService.HintSize="486,327" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[blnSignInNeeded]" DisplayName="If Sign In needed" sap:VirtualizedContainerService.HintSize="418,400" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="450,138" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_13">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Throw Exception="[new BusinessRuleException(&quot;Sign in needed.&quot;)]" sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                        <Throw Exception="[new BusinessRuleException(&quot;Sign in needed.&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_14">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -199,7 +225,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Vymazanie alebo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="486,242" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" SecureText="[sstrBazosPassword]" Version="V1">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Vymazanie alebo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="418,275" sap2010:WorkflowViewState.IdRef="NTypeInto_11" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" SecureText="[sstrBazosPassword]" Version="V1">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://pc.bazos.sk/zmazat/152739487.php" DesignTimeRectangle="450, 577, 177, 23" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl name='heslobazar' tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl name='heslobazar' tag='INPUT' type='text' class='' aaname='' /&gt;" Guid="a2b2014d-c9b4-4632-be46-bcec2e910033" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALUAAAAbCAYAAAA6Rc43AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADVSURBVHhe7duxDcIwEIVh1vIcEUgZBJsNQNSEGZwpMgeNVzk4ipAoZIB7+j/pVW5/ubuDvSZjTGlEzeS2inocrtYfO0spMRZi3qt3u+x4jtofSj5ba82AKLzXkrPVxy/sOWovnqARkXfbn7pt1P6VA1F9+yVqKCFqyCFqyCFqyCFqyCFqyCFqyCFqyCFqyCFqyCFqyCFqyCFqyCFqyCFqyCFqyPkbNZcviGr38mUcbnYphbARivfq3dbnfRu1r37C5pqcRZr36t0uO15FzZjCiJqJbbI3oH5Bjz3OIW4AAAAASUVORK5CYII=" InformativeScreenshot="0f1fc4918cdf858eef9ca2374b4d293d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Bazos.sk - Vymazanie/Úprava inzerátu č. 152739487 | Bazoš.sk' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -210,7 +236,7 @@
                       </uix:TargetAnchorable>
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <uix:NClick ClickType="Single" DisplayName="Click 'Zmazať'" sap:VirtualizedContainerService.HintSize="486,157" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Zmazať'" sap:VirtualizedContainerService.HintSize="418,182" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1ffa7d3e-a2d0-4cfe-81bb-835af669d903" Version="V1">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://pc.bazos.sk/zmazat/152739487.php" DesignTimeRectangle="513, 620, 62, 23" ElementType="Button" FriendlyName="'Zmazať'" FullSelectorArgument="&lt;webctrl aaname='Zmazať' name='administrace' parentid='formedit' tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Zmazať' name='administrace' parentid='formedit' tag='INPUT' type='submit' class='' check:text='Zmazať' /&gt;" Guid="560b6caa-5e19-43a1-909a-9786b6b6bc08" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEIAAAAbCAYAAADI1VnXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGoSURBVFhH7ZhBboMwEEW5FgfwvlUWOURh6Ss0ayu5QpsufAckVr5CF5xlyoSxscnglgRBBV58CWKPPf95xpHI4LuCpAoSCFIA4uvyDsfDC+R5vmmhR/Tqe3cgcKAs3qCua2iaZtNCj+j1eu5hOBBIaQ8QrNDr8fB6DwJLhgvYstBzAtEqgSA9CMKAEhlkGSOpmfnryigBmVBgmDGrGStCg2xBSM2NrSHMR4Ay+NwenIof0EwgqEL+VTV4ILQiIOOaBQRXeloimDYB10ISNFVN/z6Y78bsSdLa7neStxcfF7buX6r0eRBaegn06hIcJmbNd0CEMt18XGNojq2uQftF4/zW+F1PghgY8jQ0E753YLi48TaLxfTjq4AYP7mJIIwCQWWMVSQYEOxe0bilQNxaIuxzX1NAxOeO//3F45YAQScRu4TiSTIgrFF7ynZuBHg0bgkQ7E3u1CU9BURQ4q0x7SqA+j5YH0VgRuO8Pdux8Xul12MVsUElEKQEgpRAkFgQ6QsVPVwvJyiKYhcw0GNZlvBxPt2DQH2e9/MVG7363gMQe1YCcVMFPxCtirwNkg3hAAAAAElFTkSuQmCC" InformativeScreenshot="d5cdf9959101c50f77add6993ee682bf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Bazos.sk - Vymazanie/Úprava inzerátu č. 152739487 | Bazoš.sk' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -224,7 +250,7 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,91" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
